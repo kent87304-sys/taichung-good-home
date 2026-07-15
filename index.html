@@ -36,10 +36,10 @@
         </div>
       </div>
       <div class="stats">
-        <div><strong>128</strong><span>台中追蹤建案</span></div>
-        <div><strong>2,846</strong><span>近一年預售成交</span></div>
-        <div><strong>46</strong><span>建商履歷建檔</span></div>
-        <div><strong>每日</strong><span>資料更新頻率</span></div>
+        <div><strong>120</strong><span>政府實登區段</span></div>
+        <div><strong>515</strong><span>本期預售交易</span></div>
+        <div><strong>5</strong><span>涵蓋行政區</span></div>
+        <div><strong>每季</strong><span>政府資料更新</span></div>
       </div>
       <section class="method">
         <div><p class="kicker">OUR METHOD</p><h2>每一個推薦，<br>都說得出理由。</h2><p>從價格、建商、生活機能、房屋條件與契約風險評估；資料不足時不硬給高分。</p></div>
@@ -50,21 +50,22 @@
     </section>
 
     <section class="page content-page" id="launch">
-      <div class="section-head"><div><p class="kicker">NEW LAUNCH RADAR</p><h2>開售雷達</h2><p>優先追蹤即將開售與仍在首批價的建案。</p></div></div>
+      <div class="section-head"><div><p class="kicker">OFFICIAL DISCLOSURE</p><h2>近期政府揭露</h2><p>只顯示臺中市政府已公開的預售屋成交區段；政府未提供的首批價不自行推估。</p></div></div>
       <div class="tabs" id="launchTabs"></div>
       <div class="launch-list" id="launchList"></div>
       <p class="note"><b>提醒：</b>首批價仍需搭配樓層、朝向、車位與付款條件比較；以下為原型示範資料。</p>
     </section>
 
     <section class="page content-page" id="projects">
-      <div class="section-head"><div><p class="kicker">ALL PROJECTS</p><h2>全部建案清單</h2><p>目前顯示符合自住條件的 <b id="projectListCount">5</b> 個建案；未設定條件時會完整列出。</p></div><label class="sort">排序 <select id="sortSelect"><option value="score">推薦度</option><option value="price">價格</option><option value="trust">建商</option></select></label></div>
+      <div class="section-head"><div><p class="kicker">GOVERNMENT RECORDS</p><h2>政府實登區段</h2><p>目前顯示 <b id="projectListCount">5</b> 個區段，資料來自臺中市政府地政局 115 年第 2 季預售屋案件。</p></div><label class="sort">排序 <select id="sortSelect"><option value="score">揭露筆數</option><option value="price">價格</option></select></label></div>
       <div class="project-grid" id="projectGrid"></div>
+      <div class="pagination" id="pagination"></div>
     </section>
 
     <section class="page content-page" id="builders">
-      <div class="section-head"><div><p class="kicker">BUILDER CHECK</p><h2>建商安心比較</h2><p>比較完工實績、交屋穩定、施工品質與售後紀錄。</p></div></div>
-      <div class="table-wrap"><table><thead><tr><th>建商</th><th>可信度</th><th>台中實績</th><th>交屋</th><th>售後</th><th>資料完整度</th></tr></thead><tbody id="builderRows"></tbody></table></div>
-      <p class="note"><b>比較原則：</b>品牌名稱不等於契約賣方，購屋前仍要核對起造人、營造廠與關係企業。</p>
+      <div class="section-head"><div><p class="kicker">BUILDER CHECK</p><h2>建商政府資料核對</h2><p>實價資料未提供完整建商名稱，因此不顯示臆測分數；取得契約賣方後再核對官方資料。</p></div></div>
+      <div class="table-wrap"><table><thead><tr><th>官方來源</th><th>評分</th><th>核對項目</th><th>可確認資料</th><th>狀態</th><th>完整度</th></tr></thead><tbody id="builderRows"></tbody></table></div>
+      <p class="note"><b>比較原則：</b>必須先取得契約賣方或起造人名稱，才能正式核對；資料不足時不替建商打分數。</p>
     </section>
   </main>
 
@@ -72,6 +73,7 @@
     <button class="nav-btn active" data-page="home">首頁</button><button class="nav-btn" data-page="launch">開售</button><button class="nav-btn" data-page="projects">建案</button><button class="nav-btn" data-page="builders">建商</button>
   </nav>
   <footer><span class="brand-mark">好</span><b>台中好厝</b><p>目前為產品原型，資料僅供介面展示，不構成購屋建議。</p></footer>
+  <script src="government-data.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

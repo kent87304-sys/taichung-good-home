@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="追蹤台中預售屋、開售時間與建商履歷的自住選房工具。">
+  <title>台中好厝｜自住預售屋研究工具</title>
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="brand nav-btn" data-page="home" aria-label="回首頁"><span class="brand-mark">好</span><span>台中好厝<small>自住選房研究所</small></span></button>
+    <nav aria-label="主要選單">
+      <button class="nav-btn active" data-page="home">首頁</button>
+      <button class="nav-btn" data-page="launch">開售雷達</button>
+      <button class="nav-btn" data-page="projects">建案清單</button>
+      <button class="nav-btn" data-page="builders">建商比較</button>
+    </nav>
+    <span class="saved">收藏 <b id="savedCount">0</b></span>
+  </header>
+
+  <main>
+    <section class="page active" id="home">
+      <div class="hero">
+        <img src="home-hero.jpg" alt="台中好厝，找到真正適合住的家">
+        <div class="filter-card">
+          <p class="kicker">SELF-USE HOME FINDER</p>
+          <h1>找到適合長住的台中預售屋</h1>
+          <p>先用區域與房數縮小範圍，再比較價格合理度、建商紀錄與開售時間。</p>
+          <label>想住哪裡？</label>
+          <div class="chips" id="districtFilters"></div>
+          <label>需要幾房？</label>
+          <div class="segments" id="roomFilters"></div>
+          <button class="primary nav-btn" data-page="projects">查看符合的 <span id="matchCount">0</span> 個建案 <b>→</b></button>
+        </div>
+      </div>
+      <div class="stats">
+        <div><strong>128</strong><span>台中追蹤建案</span></div>
+        <div><strong>2,846</strong><span>近一年預售成交</span></div>
+        <div><strong>46</strong><span>建商履歷建檔</span></div>
+        <div><strong>每日</strong><span>資料更新頻率</span></div>
+      </div>
+      <section class="method">
+        <div><p class="kicker">OUR METHOD</p><h2>每一個推薦，<br>都說得出理由。</h2><p>從價格、建商、生活機能、房屋條件與契約風險評估；資料不足時不硬給高分。</p></div>
+        <div class="weights">
+          <div><b>價格合理度</b><span>30%</span></div><div><b>建商可靠度</b><span>25%</span></div><div><b>生活機能</b><span>20%</span></div><div><b>房屋條件</b><span>15%</span></div><div><b>契約與工程</b><span>10%</span></div>
+        </div>
+      </section>
+    </section>
+
+    <section class="page content-page" id="launch">
+      <div class="section-head"><div><p class="kicker">NEW LAUNCH RADAR</p><h2>開售雷達</h2><p>優先追蹤即將開售與仍在首批價的建案。</p></div></div>
+      <div class="tabs" id="launchTabs"></div>
+      <div class="launch-list" id="launchList"></div>
+      <p class="note"><b>提醒：</b>首批價仍需搭配樓層、朝向、車位與付款條件比較；以下為原型示範資料。</p>
+    </section>
+
+    <section class="page content-page" id="projects">
+      <div class="section-head"><div><p class="kicker">CURATED FOR YOU</p><h2>值得優先看的建案</h2><p>依區域與房數整理，並保留合理價區間供你判斷。</p></div><label class="sort">排序 <select id="sortSelect"><option value="score">推薦度</option><option value="price">價格</option><option value="trust">建商</option></select></label></div>
+      <div class="project-grid" id="projectGrid"></div>
+    </section>
+
+    <section class="page content-page" id="builders">
+      <div class="section-head"><div><p class="kicker">BUILDER CHECK</p><h2>建商安心比較</h2><p>比較完工實績、交屋穩定、施工品質與售後紀錄。</p></div></div>
+      <div class="table-wrap"><table><thead><tr><th>建商</th><th>可信度</th><th>台中實績</th><th>交屋</th><th>售後</th><th>資料完整度</th></tr></thead><tbody id="builderRows"></tbody></table></div>
+      <p class="note"><b>比較原則：</b>品牌名稱不等於契約賣方，購屋前仍要核對起造人、營造廠與關係企業。</p>
+    </section>
+  </main>
+
+  <nav class="mobile-nav" aria-label="手機選單">
+    <button class="nav-btn active" data-page="home">首頁</button><button class="nav-btn" data-page="launch">開售</button><button class="nav-btn" data-page="projects">建案</button><button class="nav-btn" data-page="builders">建商</button>
+  </nav>
+  <footer><span class="brand-mark">好</span><b>台中好厝</b><p>目前為產品原型，資料僅供介面展示，不構成購屋建議。</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>

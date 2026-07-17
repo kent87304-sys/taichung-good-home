@@ -17,7 +17,7 @@
       <button class="nav-btn" data-page="projects">建案清單</button>
       <button class="nav-btn" data-page="builders">建商比較</button>
     </nav>
-    <span class="saved">收藏 <b id="savedCount">0</b></span>
+    <span class="saved">追蹤 <b id="savedCount">0</b></span>
   </header>
 
   <main>
@@ -36,8 +36,8 @@
         </div>
       </div>
       <div class="stats">
-        <div><strong>120</strong><span>政府實登區段</span></div>
-        <div><strong>515</strong><span>本期預售交易</span></div>
+        <div><strong id="projectStat">—</strong><span>政府實登建案</span></div>
+        <div><strong id="transactionStat">—</strong><span>本期預售交易</span></div>
         <div><strong>5</strong><span>涵蓋行政區</span></div>
         <div><strong>每季</strong><span>政府資料更新</span></div>
       </div>
@@ -50,22 +50,22 @@
     </section>
 
     <section class="page content-page" id="launch">
-      <div class="section-head"><div><p class="kicker">OFFICIAL DISCLOSURE</p><h2>近期政府揭露</h2><p>只顯示臺中市政府已公開的預售屋成交區段；政府未提供的首批價不自行推估。</p></div></div>
+      <div class="section-head"><div><p class="kicker">OFFICIAL LAUNCH RADAR</p><h2>開售雷達</h2><p>依內政部建案備查的銷售期間分類，並配對同區段實價計算每坪平均。</p></div><label class="sort">排序 <select id="launchSort"><option>最新備查</option><option>每坪平均低到高</option><option>每坪平均高到低</option></select></label></div>
       <div class="tabs" id="launchTabs"></div>
       <div class="launch-list" id="launchList"></div>
-      <p class="note"><b>提醒：</b>首批價仍需搭配樓層、朝向、車位與付款條件比較；以下為原型示範資料。</p>
+      <p class="note"><b>狀態說明：</b>依政府備查的銷售期間判讀；寫至完銷或格式不明時會另外標示，不自行推定。</p>
     </section>
 
     <section class="page content-page" id="projects">
-      <div class="section-head"><div><p class="kicker">GOVERNMENT RECORDS</p><h2>政府實登區段</h2><p>目前顯示 <b id="projectListCount">5</b> 個區段，資料來自臺中市政府地政局 115 年第 2 季預售屋案件。</p></div><label class="sort">排序 <select id="sortSelect"><option value="score">揭露筆數</option><option value="price">價格</option></select></label></div>
+      <div class="section-head"><div><p class="kicker">GOVERNMENT RECORDS</p><h2>政府實登區段</h2><p>目前顯示 <b id="projectListCount">120</b> 個區段，資料來自臺中市政府地政局 115 年第 2 季預售屋案件。</p></div><label class="sort">排序 <select id="sortSelect"><option value="deal">價格機會</option><option value="score">揭露筆數</option><option value="price">價格</option></select></label></div>
       <div class="project-grid" id="projectGrid"></div>
       <div class="pagination" id="pagination"></div>
     </section>
 
     <section class="page content-page" id="builders">
-      <div class="section-head"><div><p class="kicker">BUILDER CHECK</p><h2>建商政府資料核對</h2><p>實價資料未提供完整建商名稱，因此不顯示臆測分數；取得契約賣方後再核對官方資料。</p></div></div>
-      <div class="table-wrap"><table><thead><tr><th>官方來源</th><th>評分</th><th>核對項目</th><th>可確認資料</th><th>狀態</th><th>完整度</th></tr></thead><tbody id="builderRows"></tbody></table></div>
-      <p class="note"><b>比較原則：</b>必須先取得契約賣方或起造人名稱，才能正式核對；資料不足時不替建商打分數。</p>
+      <div class="section-head"><div><p class="kicker">BUILDER RISK LIGHT</p><h2>建商官方資料燈號</h2><p>依備查案數、銷售期間清楚度與起造人是否揭露分級；不等於施工品質保證。</p></div></div>
+      <div class="table-wrap"><table><thead><tr><th>起造人／建商</th><th>風險燈號</th><th>備查案數</th><th>銷售中</th><th>已結束</th><th>期間清楚度</th></tr></thead><tbody id="builderRows"></tbody></table></div>
+      <p class="note"><b>判讀原則：</b>綠燈代表官方資料較完整；黃燈需要補查；紅燈代表關鍵資料缺漏，不直接判定品質差。</p>
     </section>
   </main>
 
@@ -74,6 +74,9 @@
   </nav>
   <footer><span class="brand-mark">好</span><b>台中好厝</b><p>目前為產品原型，資料僅供介面展示，不構成購屋建議。</p></footer>
   <script src="government-data.js"></script>
+  <script src="launch-data.js"></script>
+  <script src="builder-data.js"></script>
+  <script src="data-meta.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
